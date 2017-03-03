@@ -1,8 +1,9 @@
 class Users::PasswordsController < Devise::PasswordsController
+  layout 'public', :only => [:new, :edit]
   # GET /resource/password/new
-  # def new
-  #   super
-  # end
+  def new
+    super
+  end
 
   # POST /resource/password
   # def create
@@ -10,9 +11,9 @@ class Users::PasswordsController < Devise::PasswordsController
   # end
 
   # GET /resource/password/edit?reset_password_token=abcdef
-  # def edit
-  #   super
-  # end
+  def edit
+    super
+  end
 
   # PUT /resource/password
   # def update
