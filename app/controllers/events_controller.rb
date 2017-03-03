@@ -4,7 +4,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    @events = current_user.events
     respond_to do |format|
       format.html
       format.js
@@ -21,7 +21,7 @@ class EventsController < ApplicationController
 
   # GET /events/new
   def new
-    @event = Event.new
+    @event = current_user.events.new
     respond_to do |format|
       format.js
     end
@@ -37,9 +37,9 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
-    @event = Event.new(event_params)
+    @event = current_user.events.new(event_params)
     @day = @event.due_date.strftime('%F')
-    @meetings = Event.on_this_day(@day)
+    @meetings = current_user.events.on_this_day(@day)
     respond_to do |format|
       if @event.save
         format.json { render :show, status: :created, location: @event }
@@ -57,7 +57,7 @@ class EventsController < ApplicationController
     respond_to do |format|
       if @event.update(event_params)
         @day = @event.due_date.strftime('%F')
-        @meetings = Event.on_this_day(@day)
+        @meetings = current_user.events.on_this_day(@day)
         format.json { render :show, status: :ok, location: @event }
         format.js
       else
