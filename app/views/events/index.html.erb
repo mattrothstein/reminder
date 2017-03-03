@@ -1,0 +1,32 @@
+<div class="con">
+  <div class=" row page-header">
+    <h1>Schedule</h1>
+  </div>
+  <div class="row">
+    <div class="col-md-10 ">
+      <%= month_calendar events: @events do |date, meetings| %>
+      <div style="margin-bottom:10px;font-size: 20px;">  <%= date.strftime('%e') if date%></div>
+      <div id="<%=date%>" >
+        <%= render partial: 'day', locals: {meetings: meetings} %>
+      </div>
+      <% end %>
+    </div>
+    <div class="col-md-2">
+      <br><br><br><br><br>
+      <a href='<%=new_event_path%>' data-target='#event' data-dismiss='modal' aria-hidden='true' data-remote='true' class='btn btn-md btn-success' role='button' data-toggle='modal'>New Event</a>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="event">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <span>New Event</span>
+      </div>
+      <div class="modal-body">
+
+      </div>
+    </div>
+  </div>
+</div>

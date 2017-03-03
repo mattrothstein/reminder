@@ -1,0 +1,47 @@
+a {
+  color: black;
+}
+.con {
+  width:90%;
+  margin: 0 auto;
+}
+.simple-calendar .day {
+  border: solid 1px #DDDDDD;
+  height: 150px;
+  width: 14.28%;
+}
+
+.simple-calendar .wday-0 {}
+.simple-calendar .wday-1 {}
+.simple-calendar .wday-2 {}
+.simple-calendar .wday-3 {}
+.simple-calendar .wday-4 {}
+.simple-calendar .wday-5 {}
+.simple-calendar .wday-6 {}
+
+.simple-calendar .today {
+  background-color: rgba(66, 244, 152, 0.5);
+}
+.simple-calendar .today div:first-child {
+  color: green;
+}
+.simple-calendar .past {
+  opacity: 0.5;
+}
+.simple-calendar .past div:first-child {
+  color: red;
+}
+.simple-calendar .future {}
+
+.simple-calendar .start-date {}
+
+.simple-calendar .prev-month {}
+.simple-calendar .next-month { }
+.simple-calendar .current-month {}
+
+.simple-calendar .has-events {}
+
+.time{
+  color: #a39e9e;
+  font-size: 10px;
+}

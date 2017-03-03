@@ -1,0 +1,4 @@
+$('.modal').modal('hide')
+$('.modal-backdrop').remove();
+$('body').removeClass('modal-open');
+$("#<%= @day%>").html("<%= escape_javascript(render 'day')%>");

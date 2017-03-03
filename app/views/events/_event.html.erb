@@ -1,0 +1,5 @@
+<div id="<%=meeting.id%>">
+  <a href='<%=event_path(meeting)%>' data-target='#event' data-dismiss='modal' aria-hidden='true' data-remote='true' class='' role='button' data-toggle='modal'> <%=meeting.name.titleize%></a>
+  <span class="pull-right time"><%=meeting.due_date.strftime('%I:%M %p')%> </span>
+  <hr>
+</div>

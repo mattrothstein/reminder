@@ -1,0 +1,5 @@
+$('.modal').modal('hide')
+$('.modal-backdrop').remove();
+$('body').removeClass('modal-open');
+$('#<%=@event.id%>').remove();
+$("#<%= @day%>").html("<%= escape_javascript(render 'day')%>");

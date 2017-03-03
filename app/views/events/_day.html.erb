@@ -1,0 +1,4 @@
+<% meetings = @meetings if meetings.nil? %>
+<% meetings.sort_by(&:due_date).each do |meeting| %>
+    <%= render partial: 'event', locals: {meeting: meeting}%>
+<% end %>

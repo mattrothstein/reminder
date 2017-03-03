@@ -1,0 +1,18 @@
+<div class="container">
+  <strong>Name: </strong>
+  <%= @event.name.titleize %><br>
+  <strong>Body: </strong>
+  <%= @event.body.humanize %><br>
+  <strong>Due Date: </strong>
+  <%= @event.due_date %><br>
+  <% if @event.completed %>
+    <strong>Completed: </strong>
+    Yes<br>
+  <%end%>
+<br>
+<a href='<%=edit_event_path(@event)%>'  data-remote='true' class='btn btn-primary btn-md' >Edit</a>
+<%= link_to 'Delete', event_path(@event), method:  'delete',
+                                          data: { confirm: "Are you sure?" },
+                                          class: 'btn btn-danger',
+                                          remote: true %>
+</div>
