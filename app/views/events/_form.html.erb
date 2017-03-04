@@ -32,7 +32,7 @@
   <div class="form-group">
     <%= f.label :due_date, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.datetime_select :due_date, :class => 'form-control' %>
+      <%= f.datetime_select :due_date, {ampm: true ,:minute_step => 10}, :class => "form-control chzn-select" %>
       <%=f.error_span(:due_date) %>
     </div>
   </div>
@@ -44,3 +44,10 @@
   </div>
 
 <% end %>
+
+<style>
+.chzn-select{
+  width: 15% !important;
+  display: inline-block !important;
+}
+</style>
