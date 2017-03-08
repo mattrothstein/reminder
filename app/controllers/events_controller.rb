@@ -4,7 +4,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = current_user.events
+    @events = Event.all
     respond_to do |format|
       format.html
       format.js
