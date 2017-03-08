@@ -14,6 +14,5 @@ module Reminder
     config.time_zone = 'Eastern Time (US & Canada)'
     config.active_record.default_timezone = :local
     config.beginning_of_week = :sunday
-    config.action_dispatch.default_headers.merge!('Cache-Control' => 'no-store, no-cache')
   end
 end
