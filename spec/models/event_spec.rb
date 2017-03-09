@@ -1,8 +1,5 @@
 require 'rails_helper'
-require 'database_cleaner'
-
-DatabaseCleaner.strategy = :truncation
-DatabaseCleaner.clean
+require 'spec_helper'
 
 RSpec.describe Event, type: :model do
   context "that is just created" do
