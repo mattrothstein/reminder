@@ -35,12 +35,10 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails', '~> 3.5'
 end
-group :production do
+group :production, :test do
   gem 'pg'
 end
-group :test do
-  gem 'mysql2'
-end
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
