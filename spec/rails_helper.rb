@@ -5,6 +5,8 @@ require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'spec_helper'
 require 'rspec/rails'
+require 'support/controller_helpers'
+require 'support/factory_girl'
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -49,6 +51,8 @@ RSpec.configure do |config|
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
+  config.include ControllerHelpers, :type => :controller
+  config.include Devise::Test::ControllerHelpers, type: :controller
 
   # Filter lines from Rails gems in backtraces.
   config.filter_rails_from_backtrace!
